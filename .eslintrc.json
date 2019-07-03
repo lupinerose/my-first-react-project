@@ -4,8 +4,7 @@
     "es6": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:css-modules/recommended"
+    "eslint:recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -15,10 +14,10 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react",
-    "css-modules"
+    "react"
   ],
   "rules": {
+    "react/jsx-key": 2,
     "react/jsx-uses-vars": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-no-duplicate-props": 2,
@@ -50,8 +49,5 @@
       "error",
       "never"
     ]
-  },
-  "settings": {
-    "import/ignore": [".css$", "node_modules/*"]
   }
 }

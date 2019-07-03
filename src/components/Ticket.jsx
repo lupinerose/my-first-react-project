@@ -4,7 +4,7 @@ import './Ticket.css'
 
 function Ticket(props){
   var styles = {
-    backgroundColor: '#ecf0f1',
+    // backgroundColor: '#ecf0f1',
     fontFamily: 'sans-serif',
     paddingTop: '50px'
   }
@@ -15,6 +15,11 @@ function Ticket(props){
     
   return(
     <div style={styles}>
+      <style jsx>{`
+        div {
+            background-color: pink;
+        }
+        `}</style>
       <h3 style={styles2}>{props.location} - {props.names}</h3>
       <p className="test"><em>{props.issue}</em></p>
       <hr/>
