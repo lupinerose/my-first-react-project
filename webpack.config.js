@@ -13,7 +13,22 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx']
-  }
+    extensions: [ '.js', '.jsx' ]
+  },
 
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        options: {
+          presets: [
+            "es2015",
+            "react"
+          ]
+        }
+      },
+    ],
+  }
 };
