@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function NewTicketForm(){
   return (
@@ -7,22 +7,18 @@ function NewTicketForm(){
         <input
           type='text'
           id='names'
-          placeholder='Pair Names'
-        />
-        <br/>
+          placeholder='Pair Names'/><br/>
         <input
           type='text'
           id='location'
-          placeholder='Location'/>
-        <br/>
+          placeholder='Location'/><br/>
         <textarea
           id='issue'
-          placeholder='Describe your issue.'/>
-        <br/>
+          placeholder='Describe your issue.'/><br/>
         <button type='submit'>Help!</button>
       </form>
     </div>
-  )
+  );
 }
 
-export default NewTicketForm
+export default NewTicketForm;
