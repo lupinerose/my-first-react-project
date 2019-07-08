@@ -6,7 +6,7 @@ function TicketList(props){
   return(
     <div>
       <hr/>
-      {masterTicketList.map((ticket, index) => 
+      {props.ticketList.map((ticket, index) => 
         <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
@@ -18,6 +18,6 @@ function TicketList(props){
 
 TicketList.propTypes = {
   ticketList: PropTypes.array
-};
+}
 
 export default TicketList
