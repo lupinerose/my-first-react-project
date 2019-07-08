@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 
 function NewTicketForm(){
-  let _names = null;
-  let _location = null;
-  let _issue = null;
+  let _names = null
+  let _location = null
+  let _issue = null
 
   function handleNewTicketFormSubmission(event) {
-    event.preventDefault();
-    console.log(_names.value);
-    console.log(_location.value);
-    console.log(_issue.value);
-    _names.value = '';
-    _location.value = '';
-    _issue.value = '';
+    event.preventDefault()
+    console.log(_names.value)
+    console.log(_location.value)
+    console.log(_issue.value)
+    _names.value = ''
+    _location.value = ''
+    _issue.value = ''
   }
 
   return (
@@ -22,20 +22,20 @@ function NewTicketForm(){
           type='text'
           id='names'
           placeholder='Pair Names'
-          ref={(input) => {_names = input;}}/><br/>
+          ref={(input) => {_names = input}}/><br/>
         <input
           type='text'
           id='location'
           placeholder='Location'
-          ref={(input) =>{_location = input;}}/><br/>
+          ref={(input) =>{_location = input}}/><br/>
         <textarea
           id='issue'
           placeholder='Describe your issue.'
-          ref={(textarea) => {_issue = textarea;}}/><br/>
+          ref={(textarea) => {_issue = textarea}}/><br/>
         <button type='submit'>Help!</button>
       </form>
     </div>
-  );
+  )
 }
 
-export default NewTicketForm;
+export default NewTicketForm
