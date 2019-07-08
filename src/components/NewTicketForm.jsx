@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function NewTicketForm(){
+function NewTicketForm(props){
   let _names = null
   let _location = null
   let _issue = null
@@ -36,6 +37,10 @@ function NewTicketForm(){
       </form>
     </div>
   )
+}
+
+NewTicketForm.proptypes = {
+  onNewTicketCreation: PropTypes.func
 }
 
 export default NewTicketForm
