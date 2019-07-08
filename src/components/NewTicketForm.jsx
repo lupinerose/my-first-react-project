@@ -14,6 +14,7 @@ function NewTicketForm(){
     _location.value = '';
     _issue.value = '';
   }
+
   return (
     <div>
       <form onSubmit={handleNewTicketFormSubmission}>
