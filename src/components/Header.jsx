@@ -9,7 +9,7 @@ function Header(){
       <h1 className="test">Help Queue</h1>
       <img src={liger}/>
       <br/>
-      <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
+      <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link> | <Link to="/admin">Admin</Link>
     </div>
 
   )
