@@ -6,7 +6,6 @@ import Error404 from './Error404'
 import Admin from './Admin'
 import { Switch, Route } from 'react-router-dom'
 import { v4 } from 'uuid'
-import Moment from 'moment'
 
 class App extends React.Component {
 
@@ -16,18 +15,9 @@ class App extends React.Component {
       masterTicketList: {},
       selectedTicket: null
     }
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this)
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this)
   }
 
-  handleAddingNewTicketToList(newTicket){
-    var newTicketId = v4();
-    var newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
-      [newTicketId]: newTicket
-    });
-    newMasterTicketList[newTicketId].formattedWaitTime = newMasterTicketList[newTicketId].timeOpen.fromNow(true);
-    this.setState({masterTicketList: newMasterTicketList});
-  }
 
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() => 
@@ -57,7 +47,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route path='/newticket' render={()=><NewTicketControl />} />
           <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} selectedTicket={this.state.selectedTicket} onTicketSelection={this.handleChangingSelectedTicket}/>} />
           <Route component={Error404} />
         </Switch>
