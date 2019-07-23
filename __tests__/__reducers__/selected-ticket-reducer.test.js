@@ -5,4 +5,8 @@ describe("selectedTicketReducer", () => {
     test('Should return default state is no action type is recognized', () => {
         expect(selectedTicketReducer({}, { type: null})).toEqual({});
     });
+
+    test('Should record which ticket has been selected by user', () => {
+        expect(selectedTicketReducer({}, { type: 'SELECT_TICKET', ticketId: 1})).toEqual(1);
+    })
 })
