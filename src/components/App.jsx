@@ -10,16 +10,6 @@ import PropTypes from 'prop-types';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      selectedTicket: null
-    }
-    console.log(props);
-    this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this)
-  }
-
-
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() => 
       this.updateTicketElapsedWaitTime(),
@@ -38,10 +28,6 @@ class App extends React.Component {
     // this.setState({masterTicketList: newMasterTicketList})
   }
 
-  handleChangingSelectedTicket(ticketId){
-    this.setState({selectedTicket: ticketId})
-  }
-
   render(){
     return (
       <div>
@@ -49,7 +35,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.props.masterTicketList} />} />
           <Route path='/newticket' render={()=><NewTicketControl />} />
-          <Route path='/admin' render={(props)=><Admin ticketList={this.props.masterTicketList} currentRouterPath={props.location.pathname} selectedTicket={this.state.selectedTicket} onTicketSelection={this.handleChangingSelectedTicket}/>} />
+          <Route path='/admin' render={(props)=><Admin currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
         </Switch>
       </div>
