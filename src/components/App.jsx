@@ -10,6 +10,8 @@ import PropTypes from 'prop-types';
 import Moment from 'moment';
 import c from './../constants'
 
+// test
+
 class App extends React.Component {
 
   componentDidMount() {
